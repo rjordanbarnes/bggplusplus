@@ -213,34 +213,17 @@ function searchResultsColumns(cfg)
       // This trick does a deep copy
       cfg.cols = JSON.parse(JSON.stringify(t.cols));
       // TODO: add the "Num Players" and "Play Time" to default columns
-      // Hide the "Avg Rating" and "Num Voters"
-      for (i in cfg.cols)
-      {
-         if (cfg.cols[i].label == 'Avg Rating' ||
-               cfg.cols[i].label == 'Num Voters')
-         {
-            cfg.cols[i].hide = true;
-         }
-      }
 
-      // Define a default set of columns and their order
-      var labelOrder = ['Board Game Rank', '[Thumbnail]', 'Title', 'Geek Rating', 'Status', 'Num Players', 'Play Time'];
-
-      for (colName in cfg.cols)
-      {
-         cfg.cols[colName].hide = true;
-      }
+      // Define a set of columns to hide
+      var hiddenColumns = ['Avg Rating', 'Num Voters', 'Shop', 'Your Rating', 'Your Plays'];
 
       cfg.colOrder = [];
-      for (i=0; i < labelOrder.length; ++i)
+      for (colName in cfg.cols)
       {
-         for (colName in cfg.cols)
+         if (!hiddenColumns.includes(cfg.cols[colName].label))
          {
-            if (cfg.cols[colName].label == labelOrder[i])
-            {
-               cfg.colOrder.push(colName);
-               cfg.cols[colName].hide = false;
-            }
+            cfg.colOrder.push(colName);
+            cfg.cols[colName].hide = false;
          }
       }
    }
