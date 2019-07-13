@@ -167,12 +167,14 @@ function handleXmlSearchResultGameInfo(xmlDoc, cfg, t)
             row.tds['NumPlayers'].innerHTML =
                games[id].minPlayers + ' - ' + games[id].maxPlayers;
             row.tds['NumPlayers'].className = '';
+            row.tds['NumPlayers'].setAttribute("align", "center");
          }
          if (cfg.cols['PlayTime'].hide === false)
          {
             row.tds['PlayTime'].innerHTML =
                games[id].playingTime + " min";
             row.tds['PlayTime'].className = '';
+            row.tds['PlayTime'].setAttribute("align", "center");
          }
       }
       else
