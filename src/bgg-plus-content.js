@@ -224,7 +224,7 @@ function searchResultsColumns(cfg)
       }
 
       // Define a default set of columns and their order
-      var labelOrder = ['Board Game Rank', '[Thumbnail]', 'Title', 'Num Players', 'Play Time'];
+      var labelOrder = ['Board Game Rank', '[Thumbnail]', 'Title', 'Geek Rating', 'Status', 'Num Players', 'Play Time'];
 
       for (colName in cfg.cols)
       {
