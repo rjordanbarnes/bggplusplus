@@ -646,8 +646,9 @@ function processPage(options)
          'https://boardgamegeek.com');
 
    var action = 'none';
-   if ((href.indexOf('http://boardgamegeek.com/geeksearch.php') == 0) ||
-         (href.indexOf('https://boardgamegeek.com/geeksearch.php') == 0))
+    if ((href.indexOf('http://boardgamegeek.com/geeksearch.php') == 0) ||
+        (href.indexOf('https://boardgamegeek.com/geeksearch.php') == 0) ||
+         href.match(/https?:\/\/boardgamegeek\.com.*\/browse/))
    {
       if (options['jumptosinglesearchresult'] == 1)
       {
